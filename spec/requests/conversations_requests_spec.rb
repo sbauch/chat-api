@@ -107,4 +107,48 @@ RSpec.describe "Conversation requests", type: :request do
       end
     end
   end
+
+  describe "/conversation/:id" do
+    context "GET" do
+      let(:conversation) { create(:conversation) }
+      let!(:messages) { create_list(
+        :message,
+        5,
+        conversation: conversation,
+        user: current_user
+      ) }
+
+      before do
+        conversation.users << current_user
+        get "/conversations/#{conversation.id}"
+      end
+
+      it "returns status 200 OK" do
+        expect(response).to have_http_status(:ok)
+      end
+
+      it "returns json" do
+        expect(response.content_type).to eq("application/json")
+      end
+
+      it "returns the conversation" do
+        json = JSON.parse(response.body)
+        expect(json["conversation"]["id"]).to eq(
+          conversation.id
+        )
+      end
+
+      it "returns the most recent messages in descending order" do
+        json = JSON.parse(response.body)
+        ordered_message_ids = messages.sort do |a, b|
+          b.created_at <=> a.created_at
+        end.map(&:id)
+
+        expect(
+          json["conversation"]["messages"].map { |m| m["id"] }
+        ).to eq(ordered_message_ids)
+      end
+
+    end
+  end
 end

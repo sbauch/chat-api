@@ -11,10 +11,15 @@ class ConversationsController < ApplicationController
     )
 
     if conversation.save
-      render json: { conversation: conversation.to_json }, status: :created
+      render json: conversation, status: :created
     else
       render json: { errors: conversation.errors.full_messages }, status: 500
     end
+  end
+
+  def show
+    conversation = Conversation.find(params[:id])
+    render json: conversation, include: :messages
   end
 
   private

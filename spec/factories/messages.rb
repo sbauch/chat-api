@@ -2,8 +2,9 @@
 
 FactoryGirl.define do
   factory :message do
-    user_id ""
-    conversation_id ""
+    conversation
+    user
     content "MyText"
+    created_at { Time.now - rand(1..10).hours }
   end
 end

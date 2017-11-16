@@ -5,7 +5,7 @@
         null,
         null,
         1,
-        1,
+        17,
         1,
         1,
         1,
@@ -17,13 +17,6 @@
         1,
         15,
         15,
-        null,
-        null,
-        null,
-        1,
-        4,
-        null,
-        null,
         null,
         null
       ],
@@ -95,6 +88,11 @@
         null,
         null,
         1,
+        4,
+        4,
+        null,
+        null,
+        1,
         null,
         1,
         10,
@@ -116,8 +114,17 @@
         1,
         null,
         1,
-        25,
+        29,
         null,
+        null
+      ],
+      "/Users/sambauch/Desktop/chat-service/app/serializers/conversation_serializer.rb": [
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
         null
       ],
       "/Users/sambauch/Desktop/chat-service/app/controllers/messages_controller.rb": [
@@ -126,6 +133,7 @@
         1,
         1,
         12,
+        null,
         null,
         null,
         null,
@@ -170,6 +178,6 @@
         0
       ]
     },
-    "timestamp": 1510842663
+    "timestamp": 1510845796
   }
 }

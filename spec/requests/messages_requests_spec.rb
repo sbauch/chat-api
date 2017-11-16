@@ -9,7 +9,7 @@ RSpec.describe "Message requests", type: :request do
     allow(User).to receive(:current_user).and_return(current_user)
   end
 
-  describe "/message" do
+  describe "/messages" do
     context "POST" do
       let(:conversation) { create(:conversation) }
       let(:content) { "Hello world!" }
