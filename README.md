@@ -81,7 +81,6 @@ Request body:
 {
 	"conversation": {
 		"recipients":  [
-			"280553ec-0035-40a6-a4b8-6d3cdc00ab26",
 			"cc97c916-5ab6-41ea-a552-6444fadaa5ac",
 		]
 	}
