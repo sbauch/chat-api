@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-16T11:09:39-05:00">2017-11-16T11:09:39-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-16T17:33:18-05:00">2017-11-16T17:33:18-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         8.93
+         8.72
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>28</b> files in total.
-    <b>314</b> relevant lines. 
-    <span class="green"><b>314</b> lines covered</span> and
+    <b>30</b> files in total.
+    <b>318</b> relevant lines. 
+    <span class="green"><b>318</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -128,6 +128,26 @@
         <td>6</td>
         <td>0</td>
         <td>2.7</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#8e6c44f37b2789825bca3d655f3632e06af30919" class="src_link" title="app/serializers/message_serializer.rb">app/serializers/message_serializer.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>3</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#7749cf66d36ff1d30f4470bb39036f62746af15e" class="src_link" title="app/serializers/user_serializer.rb">app/serializers/user_serializer.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>3</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -307,7 +327,7 @@
         <td>91</td>
         <td>91</td>
         <td>0</td>
-        <td>9.2</td>
+        <td>8.8</td>
       </tr>
       
       <tr>
@@ -851,7 +871,7 @@
         <li class="covered" data-hits="6" data-linenumber="13">
           <span class="hits">6</span>
           
-          <code class="ruby">      render json: { message: message }, status: :created</code>
+          <code class="ruby">      render json: message, status: :created</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
@@ -1364,6 +1384,80 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="8e6c44f37b2789825bca3d655f3632e06af30919">
+  <div class="header">
+    <h3>app/serializers/message_serializer.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class MessageSerializer &lt; ActiveModel::Serializer</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attributes :id, :content, :user_id, :created_at, :conversation_id</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="7749cf66d36ff1d30f4470bb39036f62746af15e">
+  <div class="header">
+    <h3>app/serializers/user_serializer.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class UserSerializer &lt; ActiveModel::Serializer</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attributes :id, :username, :avatar_url</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
           
           
           <code class="ruby">end</code>
@@ -4489,8 +4583,8 @@
           <code class="ruby">        ordered_message_ids = messages.sort do |a, b|</code>
         </li>
       
-        <li class="covered" data-hits="322" data-linenumber="144">
-          <span class="hits">322</span>
+        <li class="covered" data-hits="289" data-linenumber="144">
+          <span class="hits">289</span>
           
           <code class="ruby">          b.created_at &lt;=&gt; a.created_at</code>
         </li>
@@ -4669,8 +4763,8 @@
           <code class="ruby">          ordered_message_ids = messages.sort do |a, b|</code>
         </li>
       
-        <li class="covered" data-hits="289" data-linenumber="174">
-          <span class="hits">289</span>
+        <li class="covered" data-hits="287" data-linenumber="174">
+          <span class="hits">287</span>
           
           <code class="ruby">            b.created_at &lt;=&gt; a.created_at</code>
         </li>

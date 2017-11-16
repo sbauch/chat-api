@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
 
     if message.save
       #TODO: broadcast this message to other participants
-      render json: { message: message }, status: :created
+      render json: message, status: :created
     else
       render json: { errors: message.errors.full_messages }, status: 500
     end

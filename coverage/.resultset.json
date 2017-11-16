@@ -551,7 +551,7 @@
         1,
         1,
         1,
-        322,
+        289,
         null,
         1,
         50,
@@ -581,7 +581,7 @@
         1,
         1,
         1,
-        289,
+        287,
         null,
         null,
         1,
@@ -785,6 +785,16 @@
         null,
         null
       ],
+      "/Users/sambauch/Desktop/chat-service/app/serializers/user_serializer.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/sambauch/Desktop/chat-service/app/serializers/message_serializer.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/sambauch/Desktop/chat-service/app/controllers/messages_controller.rb": [
         null,
         null,
@@ -815,6 +825,6 @@
         null
       ]
     },
-    "timestamp": 1510848579
+    "timestamp": 1510871598
   }
 }
