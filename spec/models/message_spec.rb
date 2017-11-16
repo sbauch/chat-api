@@ -3,14 +3,14 @@
 require "rails_helper"
 
 RSpec.describe Message, type: :model do
-  describe "::create_in_conversation" do
+  describe "::new_in_conversation" do
     let(:conversation) { create(:conversation) }
     let(:sender) { create(:user) }
     let(:content) { "Hello World!" }
 
     context "when provided a conversation_id, a sender, and content" do
       subject {
-        described_class.create_in_conversation(conversation.id, sender, content)
+        described_class.new_in_conversation(conversation.id, sender, content)
       }
 
       it "returns a Message" do
@@ -31,7 +31,7 @@ RSpec.describe Message, type: :model do
     end
 
     context "when provided an invalid conversation id" do
-      subject { described_class.create_in_conversation(
+      subject { described_class.new_in_conversation(
         "fake-convo-uuid", sender, content
       ) }
 
