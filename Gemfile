@@ -16,6 +16,7 @@ gem "rails", "~> 5.1.4"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
+  gem "factory_girl_rails", "~> 4.0"
   gem "rspec-rails", "~> 3.7.0"
 end
 
