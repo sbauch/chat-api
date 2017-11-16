@@ -8,11 +8,16 @@
         1,
         1,
         1,
+        null,
+        null,
+        null,
         1,
         null,
         1,
-        8,
-        8,
+        null,
+        1,
+        15,
+        15,
         null,
         null,
         1,
@@ -30,12 +35,20 @@
         1,
         null
       ],
-      "/Users/sambauch/Desktop/chat-service/app/models/conversation_user.rb": [
+      "/Users/sambauch/Desktop/chat-service/app/models/message.rb": [
         null,
         null,
         1,
         1,
         1,
+        null,
+        1,
+        5,
+        5,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/sambauch/Desktop/chat-service/app/models/user.rb": [
@@ -44,11 +57,20 @@
         1,
         1,
         1,
+        1,
         null,
         1,
         null,
         0,
         null,
+        null
+      ],
+      "/Users/sambauch/Desktop/chat-service/app/models/conversation_user.rb": [
+        null,
+        null,
+        1,
+        1,
+        1,
         null
       ],
       "/Users/sambauch/Desktop/chat-service/app/controllers/conversations_controller.rb": [
@@ -60,16 +82,25 @@
         null,
         null,
         1,
-        4,
+        10,
         null,
         null,
+        null,
+        10,
         4,
+        null,
+        6,
+        null,
         null,
         null,
         1,
         null,
         1,
-        4,
+        10,
+        null,
+        null,
+        1,
+        10,
         null,
         null,
         null,
@@ -84,7 +115,7 @@
         1,
         null,
         1,
-        7,
+        13,
         null,
         null
       ],
@@ -111,6 +142,6 @@
         0
       ]
     },
-    "timestamp": 1510793948
+    "timestamp": 1510841397
   }
 }

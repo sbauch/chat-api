@@ -6,13 +6,22 @@ class ConversationsController < ApplicationController
   end
 
   def create
-    conversation = Conversation.create_with_participant_ids(
-      conversation_params[:recipients] << @current_user.id
+    conversation = Conversation.new_with_participant_ids(
+      participant_ids_for_create
     )
-    render json: { conversation: conversation.to_json }, status: :created
+
+    if conversation.save
+      render json: { conversation: conversation.to_json }, status: :created
+    else
+      render json: { errors: conversation.errors.full_messages }, status: 500
+    end
   end
 
   private
+
+    def participant_ids_for_create
+      conversation_params[:recipients] << @current_user.id
+    end
 
     def conversation_params
       params.require(:conversation).permit(

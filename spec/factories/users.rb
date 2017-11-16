@@ -2,9 +2,6 @@
 
 FactoryGirl.define do
   factory :user do
-    # conversation_users
-    # conversations
-
     id { SecureRandom.uuid }
     sequence(:username, "a") { |n| "user-" + n }
 
@@ -12,6 +9,4 @@ FactoryGirl.define do
       after(:create) { |user| user.conversations << create_list(:conversation, 5) }
     end
   end
-
-
 end
