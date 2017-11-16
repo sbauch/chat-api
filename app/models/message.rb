@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Message < ApplicationRecord
+  paginates_per 50
   belongs_to :user
   belongs_to :conversation
   validates :content, presence: true

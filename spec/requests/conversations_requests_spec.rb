@@ -113,7 +113,7 @@ RSpec.describe "Conversation requests", type: :request do
       let(:conversation) { create(:conversation) }
       let!(:messages) { create_list(
         :message,
-        5,
+        55, # for testing pagination
         conversation: conversation,
         user: current_user
       ) }
@@ -138,17 +138,47 @@ RSpec.describe "Conversation requests", type: :request do
         )
       end
 
-      it "returns the most recent messages in descending order" do
+      it "returns the 50 most recent messages in descending order" do
         json = JSON.parse(response.body)
         ordered_message_ids = messages.sort do |a, b|
           b.created_at <=> a.created_at
-        end.map(&:id)
-
+        end.map(&:id).first(50)
         expect(
           json["conversation"]["messages"].map { |m| m["id"] }
         ).to eq(ordered_message_ids)
       end
 
+      it "returns pagination links to load more messages" do
+        expected_meta = {
+          "current_page" => 1,
+          "next_page" => 2,
+          "prev_page" => nil,
+          "total_pages" => 2,
+          "total_count" => 55
+        }
+
+        json = JSON.parse(response.body)
+        expect(json["meta"]).to eq(expected_meta)
+      end
+
+      context "for the second page of messages" do
+        before do
+          conversation.users << current_user
+          params = { page: 2 }
+          get "/conversations/#{conversation.id}", params: params
+        end
+
+        it "returns the 5 oldest messages in descending order" do
+          json = JSON.parse(response.body)
+          ordered_message_ids = messages.sort do |a, b|
+            b.created_at <=> a.created_at
+          end.map(&:id).last(5)
+
+          expect(
+            json["conversation"]["messages"].map { |m| m["id"] }
+          ).to eq(ordered_message_ids)
+        end
+      end
     end
   end
 end
