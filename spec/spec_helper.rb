@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 require "simplecov"
-SimpleCov.start "rails"
+SimpleCov.start do
+  add_filter "/app/models/user.rb"
+end
 require "factory_girl_rails"
 require "support/factory_girl"
 
